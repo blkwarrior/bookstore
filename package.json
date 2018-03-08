@@ -1,0 +1,17 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "Restfull API Bookstore",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mongoose": "*",
+    "node-datetime": "^2.0.6"
+  },
+  "author": "Amornsak A.",
+  "license": "ISC"
+}
