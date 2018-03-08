@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dateTime = require('node-datetime');
 const connect_db = require('./config/connect_db');
-
+const bookstore_api = require('./route/bookstore');
+app.use(cors());
 // Start Server
 app.listen(3000 , () =>{
     var dt = dateTime.create();
@@ -22,3 +25,10 @@ app.listen(3000 , () =>{
 
 
 });
+
+app.get('/',(req, res) =>{
+    res.send('Invalid Endpoint');
+});
+
+// Map Route
+app.use('/bookstore',bookstore_api);
