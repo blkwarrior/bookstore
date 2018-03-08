@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
+//const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dateTime = require('node-datetime');
 const connect_db = require('./config/connect_db');
 const bookstore_api = require('./route/bookstore');
-app.use(cors());
+//app.use(cors());
 // Start Server
 app.listen(3000 , () =>{
     var dt = dateTime.create();

@@ -18,3 +18,8 @@ module.exports.getGenres = function(callback, limit){
     Genre.find(callback).limit(limit);
 }
 
+// add Genres
+module.exports.addGenre = function(genre, callback){
+    Genre.create(genre, callback);
+}
+
