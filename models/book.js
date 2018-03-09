@@ -39,7 +39,30 @@ module.exports.getBookById = function(id,callback){
     Book.findById(id,callback);
 }
 
-// add Genres
+// add Book
 module.exports.addBook = function(book, callback){
     Book.create(book, callback);    
+}
+
+// update Book
+module.exports.updateBook = function(id, book, options, callback){
+    const query = {_id : id}
+    const update = {
+        title: book.title,
+        discription: book.discription,
+        author: book.author,
+        publisher: book.publisher,
+        pages: book.pages
+    }
+
+    Book.findOneAndUpdate(query, update, options, callback);
+    
+}
+
+// update Book
+module.exports.deleteBook = function(id, callback){
+    const query = {_id : id}
+  
+    Book.remove(query, callback);
+    
 }
