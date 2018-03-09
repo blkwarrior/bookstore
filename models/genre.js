@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const connect_db = require('../config/connect_db');
 
 const genreSchema = mongoose.Schema({
     name:{
@@ -21,5 +22,7 @@ module.exports.getGenres = function(callback, limit){
 // add Genres
 module.exports.addGenre = function(genre, callback){
     Genre.create(genre, callback);
+    //genre.save(callback);
+    
 }
 
